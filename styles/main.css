@@ -12,16 +12,16 @@ body{
     font-size: 18px;
     line-height: 1.5;
     font-family: 'Lato', sans-serif;
-    background-image: linear-gradient(90deg, rgb(190,194,212) 0%,transparent 59%),repeating-linear-gradient(45deg, rgba(168, 168, 168,0.1) 0px, rgba(168, 168, 168,0.1) 1px,transparent 1px, transparent 13px),repeating-linear-gradient(135deg, rgba(168, 168, 168,0.1) 0px, rgba(168, 168, 168,0.1) 1px,transparent 1px, transparent 13px),linear-gradient(90deg, rgb(190,194,212),rgb(190,194,212));    color: var(--head-color);
-    
+    background-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 41%, rgba(208,228,232,1) 92%);
     display: grid;
-    grid-template-areas: "head head"
-                         "nav nav"
-                         "main main"
+    grid-template-areas: "head nav"
+                         "head main"
+                         "head main"
                          "foot foot";
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: auto 2fr;
     grid-template-rows: auto auto 1fr auto;
 }
+
 
 a{
     color: var(--head-color);
@@ -35,7 +35,7 @@ header{
     color: var(--contrast-color);
 }
 
-@media screen and (min-width: 25em){
+/* @media screen and (min-width: 25em){
     body{
         grid-template-areas: "head head"
                              "nav main"
@@ -43,7 +43,7 @@ header{
         grid-template-columns: 1fr 4fr;
         grid-template-rows: auto 1fr auto;
     }
-}
+} */
 
 body > *{
     padding-left: var(--horizontal-space);
@@ -53,10 +53,21 @@ body > *{
 h1, h2, h3{
     line-height: 1.2;
     font-family: 'Arvo', serif;
-    color: var(--contrast-color);
+    color: var(--head-color);
 }
 
 body#about img{ height: 15em; }
+
+body > nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+body > nav ul li{
+    display: inline-block;
+    margin-top: 1.5em;
+    padding-right: 1em;
+}
 
 p{
     max-width: 50em;
@@ -87,6 +98,32 @@ body#portfolio ul#portfolioItems {
 }
 
 body#portfolio ul#portfolioItems img{
-    max-width: 10%;
+    max-width: 50%;
 }
 
+
+li > img{
+    width: 500px !important;
+}
+
+/* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
